@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="TEst" parallel="classes" thread-count="2">
-
+    <test verbose="2" preserve-order="true" name="test1" parallel="classes" thread-count="2">
+        <parameter name="browserType" value="chrome"></parameter>
+        <classes>
+            <class name="LearningTestNG.Test01"/>
+            <class name="LearningTestNG.Test02"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Test2" parallel="classes" thread-count="2">
+        <parameter name="browserType" value="firefox"></parameter>
         <classes>
             <class name="LearningTestNG.Test01"/>
             <class name="LearningTestNG.Test02"/>

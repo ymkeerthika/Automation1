@@ -1,8 +1,10 @@
 package LearningTestNG;
 
+import com.beust.jcommander.Parameter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 public class BaseTest {
@@ -10,16 +12,21 @@ public class BaseTest {
     protected WebDriver driver;
 
     @BeforeSuite
-    public void beforeSuite(){
+    public void beforeSuite() {
         System.out.println("Start Capture reports Before suite");
     }
 
 
     @BeforeClass
-    public void openBrowser(){
-        WebDriverManager.chromedriver().setup();
-        driver  = new ChromeDriver();
-
+    @Parameters("browserType")
+    public void openBrowser(String browserType) {
+        if (browserType.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (browserType.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
     }
 
     @AfterClass
@@ -29,7 +36,7 @@ public class BaseTest {
     }
 
     @AfterSuite
-    public void afterSuite(){
+    public void afterSuite() {
         System.out.println("End Capture reports After suite");
     }
 }

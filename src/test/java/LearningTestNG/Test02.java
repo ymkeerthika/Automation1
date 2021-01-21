@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -22,9 +23,9 @@ public class Test02 extends BaseTest {
 
     @Test
     public void testCase01()  {
-
+        Reporter.log("Current URL "+driver.getCurrentUrl());
         driver.findElement(By.name("field-keywords")).sendKeys("iphone 12 max pro", Keys.ENTER);
-
+        Reporter.log("Current Page Title "+driver.getTitle());
 
 
     }
