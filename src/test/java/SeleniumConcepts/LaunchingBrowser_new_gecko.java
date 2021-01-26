@@ -17,9 +17,9 @@ public class LaunchingBrowser_new_gecko {
     }
 
 
-
-    @Test
-    public void test1(){
-        driver.get("https://www.google.com");
-    }
+//
+//    @Test
+//    public void test1(){
+//        driver.get("https://www.google.com");
+//    }
 }
