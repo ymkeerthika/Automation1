@@ -1,4 +1,4 @@
-package SeleniumConcepts;
+package Locators;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -6,16 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
-import java.io.File;
 
 public class LaunchingBrowser_new {
 
     protected WebDriver driver;
     @BeforeClass
-    public void test() throws InterruptedException {
+    public void openBrowser() throws InterruptedException {
         //chromedriver.exe
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--disable-notifications");

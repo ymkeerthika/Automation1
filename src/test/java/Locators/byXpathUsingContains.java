@@ -1,7 +1,6 @@
-package SeleniumConcepts;
+package Locators;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
 

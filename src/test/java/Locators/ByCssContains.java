@@ -1,10 +1,10 @@
-package SeleniumConcepts;
+package Locators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
-public class ByCssEnsWith extends LaunchingBrowser_new {
+public class ByCssContains extends LaunchingBrowser_new {
 
     @Test
     public void byName(){
@@ -15,7 +15,7 @@ public class ByCssEnsWith extends LaunchingBrowser_new {
          * TAGNAME[Atribure$='value']
   v
          */
-        driver.findElement(By.cssSelector("input[id$='box']")).sendKeys("iphone 12", Keys.ENTER);
+        driver.findElement(By.cssSelector("input[id*='box']")).sendKeys("iphone 12 pro max", Keys.ENTER);
 
 }
 }
