@@ -1,6 +1,7 @@
 package SeleniumConcepts;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -49,6 +50,12 @@ public class Genric {
         Actions act = new Actions(driver);
         act.dragAndDrop(src,dest).build().perform();
 
+    }
+
+    public void scrollInTOView(WebDriver driver,WebElement element){
+
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].scrollIntoView();",element);
     }
 
 
