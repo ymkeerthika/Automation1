@@ -5,6 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class Genric {
 
@@ -52,11 +54,37 @@ public class Genric {
 
     }
 
-    public void scrollInTOView(WebDriver driver,WebElement element){
+    public  static void scrollInTOView(WebDriver driver,WebElement element){
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].scrollIntoView();",element);
     }
 
+
+
+    public static void selectByvisibleText(WebElement element, String text){
+
+        Select sel= new Select(element);
+        sel.selectByVisibleText(text);
+    }
+
+
+    public static void selectByvalue(WebElement element, String text){
+
+        Select sel= new Select(element);
+        sel.selectByValue(text);
+    }
+
+    public static void selectByindex(WebElement element, int index){
+
+        Select sel= new Select(element);
+        sel.selectByIndex(index);
+    }
+
+
+    public static void assertTitle(WebElement element, String text){
+      String actualText=   element.getText();
+        Assert.assertEquals(actualText,text,"Title mismatch");
+    }
 
 }
