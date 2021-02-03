@@ -1,12 +1,14 @@
 package SeleniumConcepts;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import sun.rmi.rmic.iiop.Generator;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Genric {
 
@@ -85,6 +87,16 @@ public class Genric {
     public static void assertTitle(WebElement element, String text){
       String actualText=   element.getText();
         Assert.assertEquals(actualText,text,"Title mismatch");
+    }
+
+    public static void takeScreenShot(WebDriver driver) throws IOException {
+        String path = System.getProperty("user.dir")+File.separator+"TestFiles"+File.separator+"Demo.png";
+        TakesScreenshot scrShot =((TakesScreenshot)driver);
+        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+//Move image file to new destination
+        File DestFile=new File(path);
+//Copy file at destination
+        FileUtils.copyFile(SrcFile, DestFile);
     }
 
 }
