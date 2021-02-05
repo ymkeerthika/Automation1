@@ -31,7 +31,7 @@ WebDriver driver;
 
         driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys("CLUB MAHINDRA", Keys.ENTER);
         driver.findElement(By.xpath("//span[text()='Club Mahindra Madikeri, Coorg']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         Set<String> win2 = driver.getWindowHandles();
 
         for(String str : win2){
